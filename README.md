@@ -56,17 +56,35 @@ Each upgrade is validated in CI and documented through ADRs to ensure stability 
 ---
 
 ## Repo Layout (subject to change)
-/
-├── [docs/](./docs)                  # Charter, SRS, ADRs, contributor & operator docs  
-│   ├── [README.md](./docs/README.md)          # Documentation landing page  
-│   ├── [PROJECT_CHARTER.md](./docs/PROJECT_CHARTER.md) # Project Charter (authoritative scope/guardrails)  
-│   └── [development/SRS/](./docs/development/SRS)   # System Requirements & ADR trail  
-├── [src/](./src)                   # Core, AgIO, UI, Plugins (when they exist)  
-├── [tests/](./tests)                 # Unit, integration, replay/simulation harnesses  
-├── [tools/](./tools)                 # Dev scripts, packaging, CI helpers  
-└── [README.md](./README.md)
 
-> Paths may differ initially — adjust links as folders land.
+- **[docs/](./docs)** — Charter, governance, SRS, contributor & operator docs  
+  - [README.md](./docs/README.md) — Documentation landing page  
+  - [PROJECT_CHARTER.md](./docs/PROJECT_CHARTER.md) — Authoritative scope and guardrails  
+  - **[team/](./docs/team)** — Team bios and responsibilities  
+    - [README.md](./docs/team/README.md)  
+  - **[governance/](./docs/governance)** — Governance and decision policy  
+    - [GOVERNANCE.md](./docs/governance/GOVERNANCE.md)  
+    - [DECISIONS.md](./docs/governance/DECISIONS.md)  
+    - RFC_PROCESS.md *(coming soon)*  
+  - **[development/](./docs/development)** — Engineering standards and workflow  
+    - [CODE_STYLE.md](./docs/development/CODE_STYLE.md)  
+    - CONTRIBUTING.md *(coming soon)*  
+    - REVIEW_GUIDE.md *(coming soon)*  
+    - TESTING.md *(coming soon)*  
+    - BUILDING.md *(coming soon)*  
+    - RELEASES.md *(coming soon)*  
+    - **[SRS/](./docs/development/SRS)** — System Requirements & ADR trail  
+  - **[process/](./docs/process)** — High-level community and release process  
+    - RELEASE_PROCESS.md *(coming soon)*  
+  - *(coming soon: operator / user guides)*  
+- **[src/](./src)** — Core, AgIO, UI, Plugins (when they exist)  
+- **[tests/](./tests)** — Unit, integration, replay/simulation harnesses  
+- **[tools/](./tools)** — Dev scripts, packaging, CI helpers  
+- **[README.md](./README.md)** — Top-level overview  
+
+> Paths may differ initially — adjust as folders land.
+
+
 
 ---
 

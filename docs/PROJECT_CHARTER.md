@@ -114,32 +114,30 @@ AgOpenNext targets the most recent stable combination of **.NET** and **Avalonia
 ## 6. Stakeholders & Governance
 
 AgOpenNext is a volunteer-driven project built on shared ownership, transparency, and objective decision-making.  
-Roles describe areas of responsibility, not authority — and continue to evolve as the project matures.
+Roles describe areas of responsibility, not rank, and will continue to evolve as the project matures.
 
-Contributor roles and current maintainers are listed in the [Meet the Team](./team/README.md) directory.
+Contributor roles and current maintainers are listed in the [Meet the Team](./team/README.md) directory.  
+Full governance details, decision processes, and approval rules are defined in:
 
----
-
-### Decision-Making
-
-- **Technical:** Managed through the ADR process with open discussion on GitHub and Telegram.  
-- **Scope:** Guided by this charter’s boundaries; major changes require documented rationale and community review.  
-- **Code Acceptance:** Pull requests are reviewed by active contributors; consensus is based on evidence and testing, not popularity.  
-- **Communication Channels:** Telegram Development (primary), GitHub (issues/PRs), [docs.agopengps.com](https://docs.agopengps.com), and Discourse for public updates.  
-- **Meeting Cadence:** Async-first via GitHub and Telegram; ad-hoc calls (*Zoom, Discord, etc.*) or quarterly community check-ins as needed.  
+- [Governance Framework](./governance/GOVERNANCE.md)  
+- [Decision Levels and Approval Rules](./governance/DECISIONS.md)
 
 ---
 
 ### Governance Principles
 
-- **Transparency:** All design and architectural decisions are documented through ADRs or SRS updates.  
+- **Transparency:** All design and architectural decisions are documented through ADRs, RFCs, or SRS updates.  
 - **Objectivity:** Decisions rely on evidence, testing, and documented rationale — not emotion or popularity.  
-- **Accountability:** Each change references an ADR or issue discussion; consensus is formed through reasoned debate, not polls.  
-- **Communication:** GitHub and Telegram serve as the primary collaboration channels; synchronous meetings are rare and optional.  
+- **Accountability:** Each change references an ADR, Issue, or PR discussion for traceability.  
+- **Efficiency:** Governance exists to keep development organized, not to slow it down. Paperwork ends where progress begins.  
+- **Communication:** GitHub and Telegram serve as primary collaboration channels; synchronous meetings are rare and optional.  
+- **Adaptability:** Roles and processes can evolve through the amendment process as the project grows.
 
 ---
 
-This structure keeps governance lightweight but rigorous — prioritizing clear documentation, traceable decisions, and engineering objectivity over hierarchy.
+This structure keeps governance lightweight but rigorous — emphasizing documentation, accountability, and engineering objectivity over hierarchy.  
+For the full governance model and amendment procedures, refer to the linked documents above.
+
 
 ## 7. Key Deliverables
 
@@ -202,29 +200,33 @@ All future features remain ADR-driven and community-reviewed — **foundation fi
 ## 12. Charter Governance & Revision
 
 ### Approval
-This charter is a shared understanding — not a legal contract.
-Approval requires community consensus with no major objections on GitHub or Telegram.  
-Core contributors must agree to operate within the charter’s scope and principles.  
-The Project Coordinator (Richard) declares the charter “accepted” based on community sentiment.  
-
+This charter represents a shared understanding of AgOpenNext’s scope and principles — it is **not** a legal contract.  
+Approval requires open community review with no major objections on GitHub or Telegram.  
+Core contributors acknowledge that work should remain within the charter’s defined scope and values.  
+The Project Coordinator declares the charter “accepted” based on observed community consensus, consistent with the [Governance Framework](./governance/GOVERNANCE.md).
 
 ### Governance & Values
 Contributors are expected to uphold:
-- **Foundation first:** Modernization before expansion.  
-- **Transparency:** All decisions documented and reviewable.  
-- **Objectivity:** Engineering choices grounded in data, not popularity.  
+
+- **Foundation first:** Modernization and stability before expansion.  
+- **Transparency:** All major decisions are documented and reviewable.  
+- **Objectivity:** Engineering choices grounded in data and testing, not popularity.  
 - **Quality:** Field-tested, operator-validated releases.  
-- **Sustainability:** Designed for long-term maintainability.
+- **Sustainability:** Designs and processes built for long-term maintainability.  
+- **Efficiency:** Governance and documentation serve progress, not bureaucracy.
 
 ### Revision Process
-- **Minor updates** (clarifications, formatting): may be committed directly with a short changelog note.  
-- **Major changes** (scope, governance, direction): proposed via GitHub Discussion or PR with a one-week comment period.  
+Revisions follow the [Governance Amendment Process](./governance/GOVERNANCE.md#7-amendment-process).
+
+- **Minor updates** (clarifications, typo fixes, or formatting): may be committed directly with a short changelog note and version increment.  
+- **Major updates** (scope, governance, or directional changes): proposed via GitHub Discussion or PR, open for a one-week comment period before approval by the Project Coordinator and at least one Systems Engineer or Maintainer who is not the author.  
 - Version numbers increment with each accepted major change.  
-- All previous versions remain archived for transparency and traceability.
+- All previous versions remain archived in-repo for transparency and traceability.
 
 ---
 
-Further execution details—timelines, QA, and resource planning—will be maintained in separate project documents.
+Further execution details—timelines, QA, and resource planning—are maintained in separate project documents within the [development](./development) folder.
+
 
 ## 13. Appendices
 

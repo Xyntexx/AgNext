@@ -10,6 +10,7 @@
 | **GNSS** | Global Navigation Satellite System | Satellite navigation systems including GPS, GLONASS, Galileo, and BeiDou. |
 | **HAL** | Hardware Abstraction Layer | Interface between the business logic (Core) and physical hardware; process architecture TBD. |
 | **Next** | Project Codename | Internal codename for the AgOpenGPS rewrite project (AgOpenNext). |
+| **RFC** | Request for Comments | A structured proposal document used to discuss and review major changes, features, or governance updates before formal adoption. |
 | **RTK** | Real-Time Kinematic | High-precision GNSS correction technique for centimeter-level accuracy. |
 | **SRS** | Software Requirements Specification | Comprehensive document outlining the functional and non-functional requirements of a software system. |
 
