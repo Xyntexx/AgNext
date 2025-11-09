@@ -116,7 +116,7 @@ AgOpenNext targets the most recent stable combination of **.NET** and **Avalonia
 AgOpenNext is a volunteer-driven project built on shared ownership, transparency, and objective decision-making.  
 Roles describe areas of responsibility, not authority — and continue to evolve as the project matures.
 
-Contributor roles and current maintainers are listed in the [Meet the Team](../team/README.md) directory.
+Contributor roles and current maintainers are listed in the [Meet the Team](./team/README.md) directory.
 
 ---
 
