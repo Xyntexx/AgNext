@@ -1,31 +1,36 @@
 ---
-owner: developer-enablement
-status: active
-last_reviewed: -
-related_tickets: []
+owner: ??  
+status: Draft
+last_reviewed: -  
+related_tickets: []  
 ---
+
+# This is a draft
+
+This guide is only a draft, as there is currently no source code it stands simply as a draft to be completed later as we begin development
+
 
 # Developer Guide
 
 This guide summarizes local environment setup, repeatable build commands, and key
-references for Nexus contributors. For architecture or product scope, start with the
+references for AgOpenNext contributors. For architecture or product scope, start with the
 [SRS overview](SRS/00_ReadMe.md) and the [documentation index](../INDEX.md).
 
 ## Prerequisites
 
 Install the following tools before cloning the repository:
 
-- .NET 8 SDK
+- .NET 10 SDK
 - Git 2.40+
-- Visual Studio 2022, VS Code, or another IDE with C# support
+- Visual Studio 2022, VS Code, Jetpack Rider. or another IDE with C# support
 - Docker Desktop (optional, for containerized testing and packaging)
 
 ## Initial Setup
 
 ```bash
 # Clone and enter the workspace
-git clone https://github.com/FortneyMFG/AgOpenGPS-Nexus.git
-cd AgOpenGPS-Nexus
+git clone ???
+cd ???
 
 # Restore dependencies
 dotnet restore
@@ -40,7 +45,7 @@ dotnet restore
 dotnet build
 
 # Build a specific project (example: core services)
-dotnet build "Nexus SourceCode/src/Aog.Core/Aog.Core.csproj"
+dotnet build "???"
 
 # Run all tests
 dotnet test
@@ -48,8 +53,8 @@ dotnet test
 # Filter tests by category
 dotnet test --filter "Category=Integration"
 
-# Simulation smoke tests (requires nexus CLI tooling)
-nexus sim smoke
+# Simulation smoke tests (requires AgOpenNext CLI tooling)
+agopennext sim smoke
 ```
 
 Record the commands you execute in your PR summary and keep `tasks.md` in sync with
@@ -65,12 +70,6 @@ status updates.
 
 ## Key References
 
-- [Runtime baseline enforcement](../Core/support/dotnet-runtime-baseline.md)
-- [Avalonia run modes](../UI/avalonia-run-modes.md)
-- [Plugin lease & manifest governance](../Plugins/plugin-lease-manifest-governance.md)
-- [Guidance lane publishing contracts](howto/guidance-lane-contracts.md)
-- [Plugin QA handshake checklist](qa/plugin-qa-handshake.md)
-- [Linux core operations playbook](../Core/linux-core-operations-playbook.md)
 
 These references evolve with the platform—check the linked documents for the latest
 procedures and cross-link updates from your PRs.
