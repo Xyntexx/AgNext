@@ -1,17 +1,24 @@
+---
+title: AgOpenNext Project Charter
+version: 0.6.0
+status: Draft for Community Review
+authors:
+  - Jon Fortney
+  - Markus Nuuja
+owner: Systems Engineering & Documentation Lead
+reviewers:
+  - TBD
+approvers:
+  - TBD
+created: 2025-10-20
+last_reviewed: 2025-11-08
+review_cycle: Ad-hoc when scope or assumptions shift materially
+notes: Markdown copy is canonical; add the Google Docs link when a mirrored version exists.
+---
+
 # AgOpenNext Project Charter
 
-## Document Control
-- **Version:** 0.6.0
-- **Authors:** Jon & Markus  
-- **License:** GPLv3  
-- **Reviewers:** ???  
-- **Approval Authority:** ???  
-- **Review Cycle:** Ad-hoc when scope/assumptions shift materially  
-- **Created:** 2025-10-20  
-- **Last Updated:** 2025-11-08  
-- **Status:** Draft for Community Review  
-- **Link to Markdown:** link to the markdown version if moved to google docs (or perhaps link to google docs from the markdown version)
----
+Metadata for this charter lives in the YAML front-matter block above; keep those values in sync with ownership, review, and lifecycle expectations from the governance policy.
 
 ## 1. Executive Summary, Mission & Vision
 

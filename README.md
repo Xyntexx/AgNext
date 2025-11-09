@@ -1,3 +1,20 @@
+---
+title: AgOpenNext
+version: 0.6.0
+status: Foundation phase (Pre-alpha; GA expected ~2027)
+authors:
+  - AgOpenNext Community
+owner: Project Coordinator
+reviewers:
+  - Systems Engineering Team
+approvers:
+  - Project Coordinator
+created: 2025-10-20
+last_reviewed: 2025-11-09
+review_cycle: Quarterly
+license: GPLv3
+---
+
 # AgOpenNext
 
 > The next-generation, cross-platform rewrite of AgOpenGPS — built for long-term stability, maintainability, and full hardware compatibility.  

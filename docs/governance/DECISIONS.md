@@ -2,8 +2,17 @@
 title: Decision Levels and Approval Rules
 version: 0.1.0
 status: Draft
-author: Fortney, J.
+authors:
+  - Jon Fortney
+owner: Governance Working Group
+reviewers:
+  - Project Coordinator
+approvers:
+  - Project Coordinator
+created: 2025-11-08
 last_reviewed: 2025-11-08
+review_cycle: Annual
+license: GPLv3
 ---
 
 # Decision Levels and Approval Rules

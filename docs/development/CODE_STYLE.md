@@ -2,8 +2,17 @@
 title: Code Style (C#/.NET 10 + Avalonia)
 version: 0.1.0
 status: Draft
-author: Fortney, J.
+authors:
+  - Jon Fortney
+owner: Development Standards Working Group
+reviewers:
+  - Systems Engineering
+approvers:
+  - Project Coordinator
+created: 2025-11-09
 last_reviewed: 2025-11-09
+review_cycle: Annual
+license: GPLv3
 ---
 
 # Code Style

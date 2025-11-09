@@ -1,11 +1,25 @@
 ---
-owner: ???
+title: AgOpenNext Documentation Index
+version: 0.1.0
 status: Proposed
-last_reviewed: -
-related_tickets: []
+authors:
+  - AgOpenNext Documentation Team
+owner: Documentation Working Group
+reviewers:
+  - Systems Engineering
+approvers:
+  - Project Coordinator
+created: 2025-11-09
+last_reviewed: 2025-11-09
+review_cycle: Quarterly
+license: GPLv3
 ---
 
 # AgOpenNext Documentation Index
+
+## Document Control Metadata
+
+Each document uses the shared YAML front-matter block at the top of this file (title, version, status, authors, reviewers, approvers, owner, review dates, and license). Keep that block aligned with any lifecycle notes in the body so nothing contradicts another source.
 
 ## Orientation
 

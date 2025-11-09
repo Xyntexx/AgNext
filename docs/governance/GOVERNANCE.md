@@ -1,64 +1,210 @@
 ---
-title: Decision Levels and Approval Rules
+title: AgOpenNext Governance Framework
 version: 0.1.0
 status: Draft
 author: Fortney, J.
 last_reviewed: 2025-11-08
 ---
 
-# Decision Levels and Approval Rules
+# AgOpenNext Governance Framework
 
-This document defines how decisions are classified, approved, and recorded in AgOpenNext.  
-The goal is to maintain clarity and accountability **without slowing development** — document what matters, skip what doesn’t.
+This document defines how AgOpenNext is organized, how authority is delegated, how files are controlled, and how decisions are recorded, reviewed, and amended.
 
-## 1. Decision Levels
+Governance is designed to be objective, traceable, and evidence-based — decisions are grounded in data, design constraints, and measurable outcomes rather than popularity or personality.
 
-| Level | Scope | Examples | Approval |
-|-------|--------|-----------|-----------|
-| **L0 — Trivial** | Typos, comments, docs, or formatting | Fixing grammar, adjusting whitespace | Self-merge after CI passes |
-| **L1 — Minor / Internal** | Non-functional updates or internal refactors | CI scripts, internal tooling, small logic cleanup | One Reviewer or Maintainer |
-| **L2 — Domain Feature / Refactor** | Feature or refactor within a single area; no new public interfaces | UI change, module refactor, tuning an algorithm | Project Lead or Maintainer + one Reviewer |
-| **L3 — Cross-Domain / Public Interface** | Impacts multiple areas, introduces or changes public APIs, or adds dependencies | New message format, new plugin interface | Two Maintainers or Systems Engineers |
-| **L4 — Architecture / Governance** | Alters architecture, governance, or licensing | New subsystem, protocol definition, governance edits | Project Coordinator + one Systems Engineer or Maintainer (not the author) |
+## 1. Purpose & Scope
 
-Notes:
-- Levels indicate *impact*, not complexity.  
-- The Project Coordinator may raise or lower a decision level if circumstances warrant.
+This framework establishes:
+- The structure of leadership and technical roles
+- The approval and change process for documents (SRS, ADRs, and Charter)
+- File control and authorship requirements
+- Decision-making authority and review rules
 
-## 2. Evidence and Documentation
+It does not govern the legal ownership of code or content. All work remains open under the project’s chosen license.
 
-Keep documentation proportional to impact.
+## 2. Organizational Structure
 
-- **L0–L1:** No extra documentation required beyond clear commit messages.  
-- **L2:** Mention the related Issue or link to an ADR draft if one exists.  
-- **L3–L4:** Must link to an ADR or Issue summarizing reasoning and trade-offs.  
+### 2.1 Leadership Roles
 
-No one should delay implementation waiting for documentation; capture details as part of the PR or immediately after merge.
+| Role | Description |
+|------|--------------|
+| Project Coordinator | Serves as the overall steward of the project and final authority for governance interpretation. Facilitates alignment across domains, approves major documents such as the Charter, and resolves disputes that cannot be settled within the technical team. |
+| Project Lead(s) | Responsible for executing development within their section of the codebase (e.g., Core, UI, AgIO) according to approved ADRs and requirements. Leads manage day-to-day implementation details, maintain code quality, and ensure their work conforms to system-level decisions made collectively through the ADR process. |
 
-## 3. Review Rules
 
-- Every pull request must be reviewed by **at least one person who didn’t write it**.  
-- Large or cross-domain changes (L3–L4) require review from someone familiar with affected areas.  
-- Reviewers focus on correctness, clarity, and test coverage — not personal style.  
-- The Project Coordinator breaks ties or resolves blocking disagreements.
 
-## 4. Traceability (Efficient Model)
+### 2.2 Technical Roles
 
-Traceability should enable understanding, not bureaucracy.
+| Role | Description |
+|------|--------------|
+| Systems Engineer(s) | Define and maintain the system architecture and requirements. Own and manage all SRS and ADR documents. Validate traceability between requirements and implementation, approve or reject SRS/ADR edits, and ensure decisions are documented and linked to commits. |
+| Maintainers | Responsible for code-level stability and integration. Review and merge pull requests once requirements compliance has been verified by a Systems Engineer when applicable. Maintain build health, enforce coding standards, and ensure that merged work aligns with approved ADRs. |
+| Reviewer(s) | Provide independent peer review for all pull requests. Every PR must be reviewed by at least one person who did not author the change. Reviewers check correctness, clarity, and test coverage before Maintainers merge. |
 
-- For quick changes, a descriptive commit message is enough.  
-- For impactful changes, link to an Issue or ADR so future contributors can see why something was done.  
-- The Systems Engineer maintains an ADR index, but contributors don’t need to pause development waiting on it.  
-- If a decision isn’t worth writing an ADR for, it’s probably not an L3 or L4 decision.
 
-The intent is simple: **leave breadcrumbs, not paperwork.**
+## 3. Authority & Responsibility
 
-## 5. Escalation and Resolution
+### 3.1 Project Coordinator
+- Serves as the top-level authority for project direction and governance interpretation.
+- Approves major governance or charter amendments after open community review.
+- Resolves disputes that cannot be settled within the technical team.
+- Coordinates between Project Leads to maintain alignment with the overall mission and roadmap.
 
-1. If reviewers can’t agree, escalate to the Project Coordinator.  
-2. The Coordinator may request input from other Maintainers or Systems Engineers.  
-3. The Coordinator’s ruling is final unless overturned by a subsequent ADR or governance amendment.
+### 3.2 Project Lead(s)
+- Responsible for implementation and technical oversight within their section of the codebase (e.g., Core, UI, AgIO).
+- Execute development work according to approved ADRs and requirements.
+- Review and approve pull requests within their domain once they meet the required review and testing standards.
+- Escalate architectural questions or cross-domain issues to the Systems Engineer.
 
-## 6. Amendments
+### 3.3 Systems Engineer(s)
+- Define and maintain the architecture and system requirements baseline.
+- Approve or reject any edits to the SRS or ADR files.
+- Ensure every requirement and ADR maintains traceability to implementation or testing.
+- Sign off on architectural or protocol-level changes before merge.
+- Provide final technical interpretation of ADRs when ambiguity exists.
 
-Changes to this document follow the [Governance Amendment Process](./GOVERNANCE.md#7-amendment-process).
+### 3.4 Maintainers
+- Manage repository health, enforce code style, and ensure CI/CD stability.
+- Merge PRs only after required reviews are complete and, when applicable, Systems Engineer approval is obtained.
+- Verify that merged work aligns with approved ADRs and does not break documented behavior.
+
+### 3.5 Reviewers
+- Provide independent peer review for all pull requests.
+- Every PR must be reviewed by at least one person other than the author.
+- Focus on code correctness, readability, and sufficient test coverage.
+- Escalate architectural inconsistencies or unclear requirements to the Systems Engineer or relevant Project Lead.
+
+
+## 4. Decision and Review Processes
+
+This section defines how system requirements (SRS) and architectural decisions (ADRs) move from concept to approval, how governance documents are updated, and how the Project Charter is maintained.
+
+### 4.1 SRS Section and Option Status
+
+#### Section Status Flow
+
+| Status | Description | Entry / Exit Criteria |
+|---------|--------------|-----------------------|
+| Collecting proposals | Default state for new topics. Requirements and problem statements are being gathered. | Entry: problem statement exists. Exit: baseline success metrics defined and open questions narrowed to decision-ready prompts. |
+| Under review | Requirements believed complete enough to evaluate implementation options. | Entry: Maintainers and Systems Engineer agree content is evaluable. Exit: decision matrix (if needed) linked and dependencies addressed. |
+| Ready for ADR | Consensus has formed on a preferred option family; acceptance criteria exist. | Entry: preferred option identified and validated. Exit: ADR author assigned and rollout / validation requirements documented. |
+| Decided | ADR merged and traceability updated. | Exit: further changes require a new or revised ADR. |
+
+#### Option Status Flow
+
+| Status | Description | Entry / Exit Criteria |
+|---------|--------------|-----------------------|
+| Draft | Option being developed; dependencies may be incomplete. | Entry: concept or sketch exists. Exit: dependencies and readiness gates documented. |
+| Under comparison | Option included in a decision matrix or structured evaluation. | Entry: dependency prerequisites listed. Exit: outcome recorded in matrix or ADR draft. |
+| Candidate decision | Option selected as preferred approach pending ADR approval. | Entry: evaluation complete. Exit: ADR written and accepted. |
+| Retired | Option remains for history but is no longer recommended. | Exit: superseded ADR recorded. |
+
+#### Conventions
+
+- IDs: `R-` for requirements, `O-` for options, `Q-` for open questions, `ADR-` for approved decisions.
+- Status labels appear in section headings to track progress.
+- Traceability between SRS entries, ADRs, and implementation commits is mandatory.
+- Linting (unique IDs, link validation, table structure) should be automated in CI.
+
+### 4.2 ADR Lifecycle
+
+| Stage | Description | Required Action |
+|--------|--------------|-----------------|
+| Draft | Initial submission by author. | Include title, author, summary, date, and related SRS references. |
+| In review | Open discussion period or assigned reviewers. | Link to relevant SRS sections or issues; gather feedback. |
+| Approved | Accepted and merged. | Systems Engineer assigns ADR number, updates ADR index, and records traceability. |
+| Superseded | Replaced by newer ADR. | Cross-link both ADRs; mark prior one as superseded. |
+| Retired | No longer valid but kept for historical reference. | Mark as Deprecated in header and ADR index. |
+
+All ADR modifications after approval must increment the version and include a changelog entry.
+
+### 4.3 SRS and ADR Contribution Rules
+
+- Only approved Systems Engineers may commit directly to `/docs/development/SRS/**` or `/docs/development/SRS/ADR/**`.
+- Other contributors propose changes via pull requests.
+- Each change must reference at least one related Issue or ADR.
+- Systems Engineers ensure status fields and traceability matrices are updated before merge.
+
+### 4.4 Governance Document Changes
+
+- Governance document edits are Level 4 (see [DECISIONS.md](./DECISIONS.md)).
+- Proposed through pull requests labeled governance.
+- Each file must include an updated version number and changelog note.
+- Approval required from the Project Coordinator **and** at least one Systems Engineer or Maintainer **who is not the author of the change**.
+- The Coordinator may request additional reviewers or community feedback before merge.
+- Once merged, a short summary of the change should be posted in public communication channels (e.g., Telegram, GitHub Discussions).
+
+### 4.5 Charter Approval and Revision
+
+**Approval process**
+- Community discussion period of two weeks (Telegram + GitHub Discussions) with no major objections.
+- Core contributors acknowledge the scope and agree to operate within it.
+- The Project Coordinator declares the Charter accepted based on observed consensus.
+
+**Revisions**
+- Minor updates (typos or clarifications): commit directly with a changelog and announce.
+- Major updates (scope, timeline, or governance): open Discussion, allow one-week comment period, update version number, and merge if no major objections remain.
+
+No signatures or legal obligations are implied. The Charter represents a shared technical understanding, not a contract.
+
+
+## 5. File Control & Traceability
+
+### 5.1 Required Metadata Header
+
+Each controlled document must begin with:
+
+---
+author: Name
+reviewed_by: Name(s)
+approved_by: Role or Name
+version: X.Y.Z
+date: YYYY-MM-DD
+status: Draft|In Review|Approved|Superseded
+---
+
+### 5.2 Revision Control
+- All updates occur through Pull Requests.
+- Each merge increments version in the file header.
+- Major rewrites require a changelog section or comment explaining the revision.
+- Git history is the source of truth — nothing is deleted.
+
+### 5.3 Approval Records
+The Systems Engineer maintains an index file (/docs/development/SRS/INDEX.md) listing all ADRs and their approval signatures.
+
+## 6. Enforcement & Compliance
+
+### 6.1 Validation
+Automated checks (CI or pre-commit hooks) should verify:
+- Presence of metadata header
+- Valid status value
+- Linked Issue/ADR references
+
+### 6.2 Attribution
+
+All new or modified controlled documents must clearly identify an author.
+
+This requirement exists both to ensure proper recognition of contributors **and** to preserve long-term traceability.  
+Knowing who authored or last revised a document allows future contributors to ask questions, clarify intent, and maintain continuity as the project evolves.
+
+Primary authors — those who have written the majority of the document — should be listed in the metadata header under the `author` field.  
+Substantial revisions or additions by others (beyond minor typo or clarification fixes) must be recorded in the document’s changelog section or commit message summary.
+
+Anonymous or unattributed commits to governance, SRS, or ADR files will be rejected.
+
+
+## 7. Amendment Process
+
+1. Create a pull request labeled **governance**.
+2. Include a clear summary, rationale, and expected effect of the change.
+3. The proposal must be reviewed by the **Project Coordinator** and at least one **Systems Engineer or Maintainer** who is not the author.
+4. Approval follows Level 4 rules as defined in [DECISIONS.md](./DECISIONS.md).
+5. Update the `version` and `last_reviewed` headers in the modified file.
+6. After merge, post a short summary of the change in public communication channels (e.g., Telegram, GitHub Discussions).
+
+## 8. References
+
+- [docs/governance/DECISIONS.md](./DECISIONS.md)
+- [docs/team/README.md](../team/README.md)
+- [docs/development/SRS/](../development/SRS/)
+

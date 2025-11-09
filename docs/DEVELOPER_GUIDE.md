@@ -1,8 +1,19 @@
 ---
-owner: ??  
+title: Developer Guide
+version: 0.1.0
 status: Draft
-last_reviewed: -  
-related_tickets: []  
+authors:
+  - Developer Experience Team
+owner: Developer Experience Team
+reviewers:
+  - Systems Engineering
+approvers:
+  - Project Coordinator
+created: 2025-11-08
+last_reviewed: 2025-11-08
+review_cycle: Ad-hoc with workflow changes
+license: GPLv3
+related_tickets: []
 ---
 
 # This is a draft
